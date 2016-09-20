@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FirebaseCodeLab</title>
+</head>
+<body>
+	<div id="messages" style="height:400px;overflow-y:scroll;border:1px solid grey;"></div>
+	<form id="form">
+		<input id="username" placeholder="username"/>
+		<input id="message" placeholder="message"/>
+		<button id="send" type="submit">Send</button>
+	</form>
+
+	
+	<script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+	<script>
+	// Initialize Firebase
+	var config = {
+		apiKey: "AIzaSyBl49H9bIlJ1An_eULComuuF-H9cGxsYig",
+		authDomain: "chat-room-ef041.firebaseapp.com",
+		databaseURL: "https://chat-room-ef041.firebaseio.com",
+		storageBucket: "chat-room-ef041.appspot.com",
+		messagingSenderId: "740003572920"
+	};
+	firebase.initializeApp(config);
+	</script>
+	<script src="app.js"></script>
+</body>
+</html>
