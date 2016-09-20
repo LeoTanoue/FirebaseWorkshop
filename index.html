@@ -5,13 +5,16 @@
 </head>
 <body>
 	<div id="messages" style="height:400px;overflow-y:scroll;border:1px solid grey;"></div>
-	<form id="form">
+	<form id="form" style="display: none;">
 		<input id="username" placeholder="username"/>
 		<input id="message" placeholder="message"/>
 		<button id="send" type="submit">Send</button>
 	</form>
+	<div id="login">
+		<button>Login with Google</button>
+	</div>
 
-	
+
 	<script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
 	<script>
 	// Initialize Firebase
