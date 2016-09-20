@@ -8,15 +8,17 @@ var login = document.getElementById('login');
 var messagesRef = firebase.database().ref('messages');
 
 // Retrieve new posts as they are added to Firebase
-messagesRef.on("child_added", function(data) {
-  var newPost = data.val();
-  
-  var msg = document.createElement("div");
-  msg.innerText = newPost.username + ": " + newPost.message;
-  
-  messages.appendChild(msg);
-  console.log(newPost);
-  
+messagesRef.limitToLast(20).on("child_added", function(data) {
+	var newPost = data.val();
+
+	var msg = document.createElement("div");
+	msg.innerText = newPost.username + ": " + newPost.message;
+
+	messages.appendChild(msg);
+	console.log(newPost);
+
+	//scroll to the end
+	messages.scrollTop = messages.scrollHeight;
 });
 
 form.addEventListener('submit', function(event){
